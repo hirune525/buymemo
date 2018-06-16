@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block page_title %}ログイン{% endblock %}
+
+{% block content %}
+<section class="container">
+    <h3>ログイン</h3>
+    <p>
+        <form method="POST" action="/accounts/login/">
+            {% csrf_token %}
+            <fieldset>
+                {{ form }}
+            </fieldset>
+            <input class="button" type="submit" value="LOGIN" />
+        </form>
+    </p>
+</section>
+{% endblock %}

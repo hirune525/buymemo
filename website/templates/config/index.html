@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block page_title %}インデックス{% endblock %}
+
+{% block content %}
+<h1>インデックスページ</h1>
+<div>
+    <form method="POST" action="/accounts/login/">
+        {% csrf_token %}
+        <input type="text" name="username" value="" />
+        <input type="password" name="password" value="" />
+        <input type="submit" value="ログイン" />
+    </form>
+</div>
+
+
+
+{% endblock %}

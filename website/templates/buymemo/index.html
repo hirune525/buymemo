@@ -1,0 +1,40 @@
+
+{% extends "base.html" %}
+
+{% block page_title %}買い物メモ{% endblock %}
+
+{% block content %}
+{% load static %}
+<section class="container">
+    <h3>メモリスト</h3>
+    <div class="memolist">
+        <div class="row header">
+            <div class="column">商品名</div>
+            <div class="column column-20"><span>必要な数</span></div>
+            <div class="column column-10">購入済</div>
+            <div class="column column-10">詳細</div>
+        </div>
+        {% for buyitem in buyitem_list %}
+        <div class="row">
+            <div class="column">
+                <span>{{ buyitem.name }}</span>
+            </div>
+            <div class="column column-20 util-text-align-center">
+                {{ buyitem.need_count }}</div>
+            <div class="column column-10 util-text-align-center">
+                {% if buyitem.is_purchased %}
+                <img src="{% static 'images/checked.svg' %}" alt="購入済み" width="20" height="20" />
+                {% else %}
+                <img src="{% static 'images/check.svg' %}" alt="購入済み" width="20" height="20" />
+                {% endif %}
+            </div>
+            <div class="column column-10 util-text-align-center">
+                <img src="{% static 'images/detail.svg' %}" alt="変更" width="20" height="20" />
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+
+</section>
+{% endblock %}
