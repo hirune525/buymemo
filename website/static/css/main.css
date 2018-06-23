@@ -71,6 +71,33 @@
     color: #606c76
 }
 
+.memolist th, .memolist td {
+    text-align: center;
+}
+
+.memolist th:nth-child(1) {
+    width:60%;
+}
+
+.memolist th:nth-child(2) {
+    width:20%;
+}
+
+.memolist th:nth-child(3) {
+    width:10%;
+}
+
+.memolist th:nth-child(4) {
+    width:10%;
+}
+
+.memolist td:nth-child(1) {
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .memolist .row {
     border-bottom: rgb(225,225,225) 1px solid;
     margin-bottom: 1rem;
